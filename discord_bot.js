@@ -63,6 +63,9 @@ var qs = require("querystring");
 
 var htmlToText = require('html-to-text');
 
+var gs = require("./plugins/google_plugin");
+var google_plugin = new gs();
+
 var giphy_config = {
     "api_key": "dc6zaTOxFJmzC",
     "rating": "r",
@@ -135,6 +138,13 @@ var commands = {
         description: "sets bot status to online",
         process: function(bot,msg){ bot.setStatusOnline();}
     },
+    "google": {
+        usage: "<google search>",
+        description: "gets first result from google",
+        process: function(bot,msg,suffix){
+            google_plugin.respond(suffix,msg.channel,bot);
+            }
+     },
     "youtube": {
         usage: "<video tags>",
         description: "gets youtube video matching tags",
