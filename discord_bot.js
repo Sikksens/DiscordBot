@@ -63,7 +63,7 @@ var qs = require("querystring");
 
 var htmlToText = require('html-to-text');
 
-var gs = require("./plugins/google_plugin");
+var gs = require("./google_plugin");
 var google_plugin = new gs();
 
 var giphy_config = {
