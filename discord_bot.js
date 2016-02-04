@@ -310,7 +310,7 @@ var commands = {
 				var sunset = new Date(weathersearch.sys.sunset*1000)
 				var formattedSunset = (sunset.getHours()) + ':' + ("0" + sunset.getMinutes()).substr(-2)
  				var emoji = "☀";
-					if (weathersearch.weather[0].description.indexOf("cloud") > -1 || weathersearch.weather[0].description.indexOf("mist") > -1) { emoji = "☁""; }
+					if (weathersearch.weather[0].description.indexOf("cloud") > -1 || weathersearch.weather[0].description.indexOf("mist") > -1) { emoji = "☁"; }
 					if (weathersearch.weather[0].description.indexOf("snow") > -1) { emoji = "❄"; }
 					if (weathersearch.weather[0].description.indexOf("rain") > -1 || weathersearch.weather[0].description.indexOf("storm") > -1 || weathersearch.weather[0].description.indexOf("drizzle") > -1) { emoji = "☔"; }
  				bot.sendMessage(msg.channel,"The weather right now in " + "**"+weathersearch.name+","+weathersearch.sys.country+"**" + " is: "+ 
