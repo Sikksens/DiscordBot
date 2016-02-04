@@ -551,13 +551,13 @@ var commands = {
 			function(err,res,body){
 				var stream = JSON.parse(body);
 				if(stream.stream){
-					bot.sendMessage(msg.channel, suffix
-						+" is online, playing "
-						+stream.stream.game
-						+"\n"+stream.stream.channel.status
-						+"\n"+stream.stream.preview.large)
+					bot.sendMessage(msg.channel, ":green_book: "+"**"+stream.stream.channel.display_name+"**"+" is **online!**"
+						+"\n **Playing:** "+stream.stream.game
+						+"\n **Title:** "+stream.stream.channel.status
+						+"\n **Viewers:** "+stream.stream.viewers
+						+"\nhttp://twitch.tv/"+suffix)
 				}else{
-					bot.sendMessage(msg.channel, suffix+" is offline")
+					bot.sendMessage(msg.channel, ":red_circle: "+"**"+stream.stream.channel.display_name+"**"+" is offline")
 				}
 			});
 		}
