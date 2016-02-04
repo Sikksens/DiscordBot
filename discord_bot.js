@@ -309,15 +309,15 @@ var commands = {
 				var formattedSunrise = (sunrise.getHours()) + ':' + ("0" + sunrise.getMinutes()).substr(-2)
 				var sunset = new Date(weathersearch.sys.sunset*1000)
 				var formattedSunset = (sunset.getHours()) + ':' + ("0" + sunset.getMinutes()).substr(-2)
- 				var emoji = ":sunny:";
-					if (weathersearch.weather[0].description.indexOf("cloud") > -1 || weathersearch.weather[0].description.indexOf("mist") > -1) { emoji = ":cloud:"; }
-					if (weathersearch.weather[0].description.indexOf("snow") > -1) { emoji = ":snowflake:"; }
-					if (weathersearch.weather[0].description.indexOf("rain") > -1 || weathersearch.weather[0].description.indexOf("storm") > -1 || weathersearch.weather[0].description.indexOf("drizzle") > -1) { emoji = ":umbrella:"; }
+ 				var emoji = "☀";
+					if (weathersearch.weather[0].description.indexOf("cloud") > -1 || weathersearch.weather[0].description.indexOf("mist") > -1) { emoji = "☁""; }
+					if (weathersearch.weather[0].description.indexOf("snow") > -1) { emoji = "❄"; }
+					if (weathersearch.weather[0].description.indexOf("rain") > -1 || weathersearch.weather[0].description.indexOf("storm") > -1 || weathersearch.weather[0].description.indexOf("drizzle") > -1) { emoji = "☔"; }
  				bot.sendMessage(msg.channel,"The weather right now in " + "**"+weathersearch.name+","+weathersearch.sys.country+"**" + " is: "+ 
  				"\n" + emoji + "** Conditions:** " + conditions + " / " + tempC + "°C" +
  				"\n" + "💨 **Wind:** " + windSpdK + "kph" + " blowing "+ windDir +
- 				"\n" + ":sweat: **Humidity:** " + humidity + "%"+
- 				"\n" + "**:sunrise: Sunrise:** "+formattedSunrise+" UTC  **🌇 Sunset:** "+formattedSunset+" UTC");
+ 				"\n" + "😓 **Humidity:** " + humidity + "%"+
+ 				"\n" + "**🌅 Sunrise:** "+formattedSunrise+" UTC  **🌇 Sunset:** "+formattedSunset+" UTC");
  				bot.deleteMessage(msg);
  			} else {
  				bot.sendMessage(msg.channel,"Please input a city/zip and country using the syntax <city/postcode;country>")
